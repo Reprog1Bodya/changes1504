@@ -1,0 +1,219 @@
+/* Базовые настройки */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Шапка */
+header {
+  background-color: #333;
+  padding: 1rem;
+  text-align: center;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+header a:hover {
+  color: #ffcc00; /* Цвет при наведении */
+}
+
+/* Заголовок */
+h1 {
+  text-align: center;
+  margin: 40px 0;
+}
+
+/* Сетка курсов */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.main-courses {
+  display: grid;
+  /* repeat(auto-fit...) — это круто, но добавим управление высотой строк */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+  grid-auto-rows: 1fr; /* Это заставит все карточки в ряду быть одной высоты */
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.course {
+  background: #f4f4f4;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.course:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* класс кнопок смены языка(не используется) -Бодя*/
+
+/* .langs {
+  text-align: right;
+} */
+
+/* Футер */
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 80px;
+}
+
+/* Контейнер для всех учителей */
+.course-teachers {
+  display: flex;
+  flex-wrap: wrap; /* Чтобы карточки переносились на новую строку */
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+}
+
+/* Сама карточка */
+.teacher {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  width: 280px;
+  overflow: hidden; /* Чтобы скруглить углы у картинки внутри */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: 0.3s;
+}
+
+.teacher:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* использовался такой атрибут для фотографии преподавателей -Бодя */
+.teacher-photo img {
+  width: 170px;
+  height: 170px;
+  margin-top: 20px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.teacher-info {
+  padding: 15px;
+}
+
+.specialty {
+  color: #007bff;
+  font-weight: bold;
+  margin: 5px 0;
+}
+/* описание преподавателя -Бодя */
+.bio {
+  margin-bottom: 10px;
+  font-size: 11pt;
+}
+
+/* доп. информация(стаж) -Бодя */
+.add-bio{
+  color: #7c7c7c;
+  font-size: 10pt;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+.btn-contact {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  background-color: #ffffff;
+}
+
+.btn-contact:hover {
+  background-color: #555;
+}
+
+.course-button {
+  margin-top: auto;
+  align-self: center; 
+  display: inline-block; 
+  padding: 10px 20px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.r-img-flag img{
+  width: 250px;
+  height: 250px;
+  border-radius: 200px;
+  object-fit: cover;
+}
+
+.l-img-flag img{
+  width: 250px;
+  height: 250px;
+  border-radius: 200px;
+  object-fit: cover;
+}
+
+
+.eng-para{
+  font: italic normal bold 32px/1 "Roboto", sans-serif;
+  text-align: right;
+  padding-right: 40px;
+  margin: 0;
+}
+
+.r-img-flag {
+  display:flex;
+  padding-left: 30px;
+}
+
+.l-img-flag {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 30px;
+}
+
+.r-img-flag h5{
+  padding: 0px 50px 0px 100px;
+  text-align: right;
+  
+}
+
+.l-img-flag h5{
+  padding: 0px 100px 0px 50px;
+  text-align: left;
+}
+
+.span-para{  
+  font: italic normal bold 32px/1 "Roboto", sans-serif;
+  text-align: left;
+  padding-left: 40px;
+  margin: 0;
+}
+
+.course-lang{
+  padding: bottom 15px;
+  padding-top: 15px;
+  border-bottom: 1px solid #cdcdcd;
+  transform: scale(1);
+  transition: 0.5s;
+}
+.course-lang:hover{
+  border-bottom: 1px solid white;
+  transform: scale(0.97);
+}

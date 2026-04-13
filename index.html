@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <!-- подключение js с языками главной страницы -Бодя -->
+    <script src="lang.js"></script>
+    <header>   
+            <a href="index.html" data-lang-key="main">Главная</a>
+            <a href="courses.html" data-lang-key="courses">Курсы</a>
+            <a href="teachers.html" data-lang-key="teach">Преподаватели</a>
+            <button onclick="changeLanguage('ru')">RU</button>
+            <button onclick="changeLanguage('en')">EN</button>
+            <button onclick="changeLanguage('lv')">LV</button>
+    </header>
+    <!-- далее идёт добавление атрибута data-lang-key к каждому блоку и строке -Бодя -->
+    <div>
+        <h1 data-lang-key="title">Добро пожаловать в школу иностранных языков</h1>
+    </div>
+    <main>
+        <div class="main-courses">  
+            <div class="course">
+                <h3 data-lang-key="eng">Курс Английского языка</h3>
+                <p data-lang-key="level">От A1 до С1</p>
+                <button class="course-button" data-lang-key="course_but">Записаться</button>
+            </div>
+            <div class="course">
+                <h3 data-lang-key="ger">Курс Немецкого языка</h3>
+                <p data-lang-key="level">От A1 до С1</p>
+                <button class="course-button" data-lang-key="course_but">Записаться</button>
+            </div>
+            <div class="course">
+                <h3 data-lang-key="spa">Курс Испанского языка</h3>
+                <p data-lang-key="level">От A1 до С1</p>
+                <button class="course-button" data-lang-key="course_but">Записаться</button>
+            </div>
+            <div class="course">
+                <h3 data-lang-key="pol">Курс Польского языка</h3>
+                <p data-lang-key="level">От A1 до С1</p>
+                <button class="course-button" data-lang-key="course_but">Записаться</button>
+            </div>
+        </div>
+        <div class="main-courses">
+            <div class="course">
+                <h3 data-lang-key="jap">Курс Японского языка</h3>
+                <p data-lang-key="level">От A1 до С1</p>
+                <button class="course-button" data-lang-key="course_but">Записаться</button>
+            </div>
+            <div class="course">
+                <h3 data-lang-key="fra">Курс Французского языка</h3>
+                <p data-lang-key="level">От A1 до С1</p>
+                <button class="course-button" data-lang-key="course_but">Записаться</button>
+            </div>
+            <div class="course">
+                <h3 data-lang-key="ser">Курс Сербского языка</h3>
+                <p data-lang-key="level">От A1 до С1</p>
+                <button class="course-button" data-lang-key="course_but">Записаться</button>
+            </div>
+            <div class="course">
+                <h3 data-lang-key="ita">Курс Итальянского языка</h3>
+                <p data-lang-key="level">От A1 до С1</p>
+                <button class="course-button" data-lang-key="course_but">Записаться</button>
+            </div>
+        </div>
+    </main>
+    
+    <footer data-lang-key="contact">
+        Контакты +8 (800)-555-35-35
+    </footer>
+</body>
+</html>

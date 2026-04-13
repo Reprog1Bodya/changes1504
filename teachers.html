@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Преподаватели</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <script src="lang.js"></script>
+    <header>
+            <a href="index.html" data-lang-key="main">Главная</a>
+            <a href="courses.html" data-lang-key="courses">Курсы</a>
+            <a href="teachers.html" data-lang-key="teach">Преподаватели</a>
+            <button onclick="changeLanguage('ru')">RU</button>
+            <button onclick="changeLanguage('en')">EN</button>
+            <button onclick="changeLanguage('lv')">LV</button>
+    </header>
+    <div>
+        <h1 data-lang-key="our_teach">Наши преподаватели:</h1>
+    </div>
+    <main>
+        <div class="course-teachers">
+            <!-- карточки с учителями -Бодя -->
+            <div class="teacher">
+                <div class="teacher-photo">    
+                    <img src="styles/teach1.jpg">
+                </div>
+                <h2>Мусорева Екатерина Александрова</h2>
+                <div class="bio">
+                    <span>Преподаватель Английского на уровне С1 и Испанского языка до уровня В1</span>
+                </div>
+                <div class="add-bio">
+                    <span>стаж – 7 лет</span>
+                </div>
+            </div>
+
+            <div class="teacher">
+                <div class="teacher-photo">    
+                    <img src="styles/teach2.jpg">
+                </div>
+                <h2>Образцова Наталья Сергеевна</h2>
+                <div class="bio">
+                    <span class="bio">Преподаватель Немецкого и Французского языков до уровня С1</span>
+                </div>
+                <div class="add-bio">
+                    <span>стаж – 5 лет</span>
+                </div>
+            </div>
+
+            <div class="teacher">
+                <div class="teacher-photo">    
+                    <img src="styles/teach3.png">
+                </div>
+                <h2>Ковалец Валентина Владимировна</h2>
+                <div class="bio">
+                    <span class="bio">Преподаватель любых славянских языков до уровня С1</span>
+                </div>
+                <div class="add-bio">
+                    <span>стаж – 6 лет</span>
+                </div>
+            </div>
+            <div class="teacher">
+                <h3>Учитель4</h3>
+            </div>
+            <div class="teacher">
+                <h3>Учитель5</h3>
+            </div>
+        </div>
+    </main>
+    
+    <footer data-lang-key="contact">
+        Контакты +8 (800)-555-35-35
+    </footer>
+</body>
+</html>
