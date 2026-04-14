@@ -2,13 +2,14 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Главная</title>
+    <title data-lang-key="main">Главная</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
     <div class="page-content">
     <!-- подключение js с языками главной страницы -Бодя -->
     <script src="lang.js"></script>
+    <script src="quiz.js" defer></script>
     <header>   
             <a href="index.html" data-lang-key="main">Главная</a>
             <a href="courses.html" data-lang-key="courses">Курсы</a>
@@ -75,13 +76,41 @@
                 <button class="course-button" data-lang-key="course_but">Записаться</button>
             </div>
         </div>
+
+        <section id="quiz-section" class="quiz-container">
+            <h2 data-lang-key="quiz_sec">Подбор курса</h2>
+            <p class="quiz-subtitle" data-lang-key="main_quiz">Ответьте на 10 вопросов, и мы подберём идеальный язык, исходя из ваших целей и опыта!</p>
+
+            <div id="quiz-start" class="quiz-screen active">
+                <button id="start-quiz-btn" class="test-button" data-lang-key="begin">Начать тест</button>
+            </div>
+
+            <div id="quiz-content" class="quiz-screen">
+                <div class="quiz-progress">
+                <div class="progress-bar" id="progress-bar"></div>
+                </div>
+                <p class="question-counter">Вопрос <span id="current-q">1</span> из 10</p>
+                <h3 id="question-text" class="question-text"></h3>
+                <div id="options-container" class="options-grid"></div>
+                <button id="next-btn" class="test-button" disabled>Далее</button>
+            </div>
+
+            <div id="quiz-result" class="quiz-screen">
+                <h3>Ваш идеальный курс:</h3>
+                <div id="result-card" class="result-card">
+                <h2 id="result-lang"></h2>
+                <p id="result-desc"></p>
+                <button id="result-register-btn" class="course-button">Записаться на курс</button>
+                </div>
+                <button id="restart-quiz-btn" class="course-button" style="margin-top: 15px; background: #eee; color: #333;">Пройти заново</button>
+            </div>
+        </section>
     </main>
     
+    </div>
     <footer data-lang-key="contact">
         Контакты +8 (800)-555-35-35
     </footer>
-    </div>
-    
     <!-- Модальное окно авторизации/регистрации -->
     <div id="authModal" class="modal-overlay" onclick="handleModalClick(event)">
         <div class="modal-window">
@@ -92,7 +121,7 @@
             <form id="loginForm" class="auth-form" onsubmit="handleLogin(event)">
                 <input type="email" id="loginEmail" placeholder="Email" required>
                 <input type="password" id="loginPassword" placeholder="Пароль" required>
-                <button type="submit">Войти</button>
+                <button type="submit" data-lang-key="log_in">Войти</button>
                 <div id="errorMessage" class="error-message"></div>
                 <div id="successMessage" class="success-message"></div>
             </form>
@@ -103,7 +132,7 @@
                 <input type="email" id="registerEmail" placeholder="Email" required>
                 <input type="password" id="registerPassword" placeholder="Пароль (мин. 6 символов)" required>
                 <input type="password" id="registerConfirmPassword" placeholder="Подтвердите пароль" required>
-                <button type="submit">Зарегистрироваться</button>
+                <button type="submit" data-lang-key="reg">Зарегистрироваться</button>
                 <div id="errorMessage" class="error-message"></div>
                 <div id="successMessage" class="success-message"></div>
             </form>
@@ -113,13 +142,13 @@
                 <p><strong>Вы вошли как:</strong></p>
                 <p id="userName"></p>
                 <p id="userEmail" style="color: #666; font-size: 14px;"></p>
-                <button class="logout-btn" onclick="handleLogout()">Выйти</button>
+                <button class="logout-btn" onclick="handleLogout()" data-lang-key="log_out">Выйти</button>
             </div>
             
             <!-- Переключатель между входом и регистрацией -->
             <div class="auth-toggle" id="authToggle">
-                <span id="toggleText">Нет аккаунта?</span>
-                <a id="toggleLink" onclick="showRegister()">Зарегистрироваться</a>
+                <span id="toggleText" data-lang-key="no_acc">Нет аккаунта?</span>
+                <a id="toggleLink" onclick="showRegister()" data-lang-key="reg">Зарегистрироваться</a>
             </div>
         </div>
     </div>

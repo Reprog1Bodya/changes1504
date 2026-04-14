@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Преподаватели</title>
+    <title data-lang-key="teach">Преподаватели</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
     <div class="page-content">
     <script src="lang.js"></script>
+    <script src="slider.js"></script>
     <header>
             <a href="index.html" data-lang-key="main">Главная</a>
             <a href="courses.html" data-lang-key="courses">Курсы</a>
@@ -31,12 +32,12 @@
     <main>
         <div class="course-teachers">
             <!-- карточки с учителями -Бодя -->
-            <div class="teacher">
+           <div class="teacher">
                 <div class="teacher-photo">    
                     <img src="styles/teach1.jpg">
                 </div>
-                <h2>Мусорева Екатерина Александрова</h2>
-                <div class="bio">
+                <h2 data-lang-key="teach1">Musoreva Yekaterina Alexandrova</h2>
+                <div class="bio" data-lang-key="bio1">
                     <span>Преподаватель Английского на уровне С1 и Испанского языка до уровня В1</span>
                 </div>
                 <div class="add-bio">
@@ -48,9 +49,9 @@
                 <div class="teacher-photo">    
                     <img src="styles/teach2.jpg">
                 </div>
-                <h2>Образцова Наталья Сергеевна</h2>
+                <h2 data-lang-key="teach2">Obrazcova Natalia Sergeevna</h2>
                 <div class="bio">
-                    <span class="bio">Преподаватель Немецкого и Французского языков до уровня С1</span>
+                    <span class="bio" data-lang-key="bio2">Преподаватель Немецкого и Французского языков до уровня С1</span>
                 </div>
                 <div class="add-bio">
                     <span>стаж – 5 лет</span>
@@ -61,27 +62,100 @@
                 <div class="teacher-photo">    
                     <img src="styles/teach3.png">
                 </div>
-                <h2>Ковалец Валентина Владимировна</h2>
+                <h2 data-lang-key="teach3">Kovalec Valentina Vladimirovna</h2>
                 <div class="bio">
-                    <span class="bio">Преподаватель любых славянских языков до уровня С1</span>
+                    <span class="bio" data-lang-key="bio3">Преподаватель любых славянских языков до уровня С1</span>
                 </div>
                 <div class="add-bio">
                     <span>стаж – 6 лет</span>
                 </div>
             </div>
+            
             <div class="teacher">
-                <h3>Учитель4</h3>
+                <div class="teacher-photo">    
+                    <img src="styles/teach4.png">
+                </div>
+                <h2 data-lang-key="teach4">Novak Maria Viktorovna</h2>
+                <div class="bio">
+                    <span class="bio" data-lang-key="bio4">Преподаватель языков романских корней до уровня С1</span>
+                </div>
+                <div class="add-bio">
+                    <span>стаж – 4 года</span>
+                </div>
             </div>
             <div class="teacher">
-                <h3>Учитель5</h3>
+                <div class="teacher-photo">    
+                    <img src="styles/teach5.png">
+                </div>
+                <h2 data-lang-key="teach5">Haapala Alexey Dmitrievich</h2>
+                <div class="bio">
+                    <span class="bio" data-lang-key="bio5">Профессиональный преподаватель японского языка до уровня С1</span>
+                </div>
+                <div class="add-bio">
+                    <span>стаж – 9 лет</span>
+                </div>
+            </div>
+    </main>
+    
+    <section class="reviews-section">
+    <h2 data-lang-key="rate">Отзывы наших студентов</h2>
+    <div class="slider-container">
+        <button class="slider-btn prev-btn" aria-label="Предыдущий отзыв">&#10094;</button>
+        <div class="slider-track">
+            <!-- Отзыв 1 -->
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"Отличный преподаватель! Благодаря занятиям с Екатериной Александровной мой английский вышел на уровень C1 всего за год. Материал подается очень понятно и структурированно."</p>
+                <p class="review-author">Иванов Петр Сергеевич</p>
+            </div>
+            <!-- Отзыв 2 -->
+            <div class="review-card">
+                <div class="stars">★★★★☆</div>
+                <p class="review-text">"Занимаюсь испанским у Натальи Сергеевны. Очень нравится атмосфера на уроках, много разговорной практики. Рекомендую всем, кто хочет быстро заговорить!"</p>
+                <p class="review-author">Смирнова Анна Игоревна</p>
+            </div>
+            <!-- Отзыв 3 -->
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"Vācu valodas skolotājs ir vienkārši brīnišķīgs. Personalizēta uzmanība, elastīgs grafiks un pastāvīgs atbalsts. Es nokārtoju B2 eksāmenu astoņos mēnešos."</p>
+                <p class="review-author">Kuzņecovs Jānis Aleksejevič</p>
+            </div>
+            <!-- Отзыв 4 -->
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"I studied Polish with Valentina Vladimirovna. She's a very professional and patient teacher. The grammar finally became clear, and my pronunciation improved dramatically."</p>
+                <p class="review-author">Emily Parker</p>
+            </div>
+            <!-- Отзыв 5 -->
+            <div class="review-card">
+                <div class="stars">★★★★☆</div>
+                <p class="review-text">"Японский язык казался невозможным, но Алексей Дмитриевич разложил всё по полочкам. Теперь свободно читаю мангу и смотрю аниме без субтитров. Спасибо!"</p>
+                <p class="review-author">Морозов Илья Викторович</p>
+            </div>
+            <!-- Отзыв 6 -->
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"Проходила курс славянских языков. Преподаватель знает своё дело на все 100%. Удобный формат онлайн, интересные задания и мотивирующая подача материала."</p>
+                <p class="review-author">Лебедева Ольга Николаевна</p>
+            </div>
+            <!-- Отзыв 7 -->
+            <div class="review-card">
+                <div class="stars">★★★★☆</div>
+                <p class="review-text">"Занимался романскими языками. Очень доволен прогрессом! Уроки проходят в дружелюбной обстановке, много практики и полезных лайфхаков для запоминания."</p>
+                <p class="review-author">Соколов Максим Андреевич</p>
             </div>
         </div>
-    </main>
+        <button class="slider-btn next-btn" aria-label="Следующий отзыв">&#10095;</button>
+    </div>
+    <div class="slider-dots"></div>
+    </section>
+
+
+    </div>
     
     <footer data-lang-key="contact">
         Контакты +8 (800)-555-35-35
     </footer>
-    </div>
     
     <!-- Модальное окно авторизации/регистрации -->
     <div id="authModal" class="modal-overlay" onclick="handleModalClick(event)">
@@ -93,7 +167,7 @@
             <form id="loginForm" class="auth-form" onsubmit="handleLogin(event)">
                 <input type="email" id="loginEmail" placeholder="Email" required>
                 <input type="password" id="loginPassword" placeholder="Пароль" required>
-                <button type="submit">Войти</button>
+                <button type="submit" data-lang-key="log_in">Войти</button>
                 <div id="errorMessage" class="error-message"></div>
                 <div id="successMessage" class="success-message"></div>
             </form>
@@ -104,7 +178,7 @@
                 <input type="email" id="registerEmail" placeholder="Email" required>
                 <input type="password" id="registerPassword" placeholder="Пароль (мин. 6 символов)" required>
                 <input type="password" id="registerConfirmPassword" placeholder="Подтвердите пароль" required>
-                <button type="submit">Зарегистрироваться</button>
+                <button type="submit" data-lang-key="reg">Зарегистрироваться</button>
                 <div id="errorMessage" class="error-message"></div>
                 <div id="successMessage" class="success-message"></div>
             </form>
@@ -119,8 +193,8 @@
             
             <!-- Переключатель между входом и регистрацией -->
             <div class="auth-toggle" id="authToggle">
-                <span id="toggleText">Нет аккаунта?</span>
-                <a id="toggleLink" onclick="showRegister()">Зарегистрироваться</a>
+                <span id="toggleText" data-lang-key="no_acc">Нет аккаунта?</span>
+                <a id="toggleLink" onclick="showRegister()" data-lang-key="reg">Зарегистрироваться</a>
             </div>
         </div>
     </div>

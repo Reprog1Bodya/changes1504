@@ -8,12 +8,14 @@ body {
   background: linear-gradient(135deg, #1a1a2e 0%, #2d3436 50%, #636e72 100%);
   background-attachment: fixed;
   background-size: cover;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Контейнер для контента поверх градиента */
 .page-content {
   background: rgba(255, 255, 255, 0.97);
-  min-height: 100vh;
+  flex: 1;
   padding-bottom: 80px;
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
 }
@@ -194,7 +196,7 @@ footer {
   color: white;
   text-align: center;
   padding: 20px;
-  margin-top: 80px;
+  margin-top: 0; 
 }
 
 /* Контейнер для всех учителей */
@@ -520,4 +522,199 @@ footer {
 .course-lang:hover{
   border-bottom: 1px solid white;
   transform: scale(0.97);
+}
+
+/* --- Слайдер отзывов --- */
+.reviews-section {
+    max-width: 1000px;
+    margin: 60px auto 40px;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.reviews-section h2 {
+    margin-bottom: 30px;
+    color: #2c3e50;
+    font-size: 2rem;
+}
+
+.slider-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: 10px 0;
+}
+
+.slider-track {
+    display: flex;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.review-card {
+    min-width: 100%;
+    padding: 40px 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.review-card .stars {
+    color: #f7d794;
+    font-size: 24px;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.review-card .review-text {
+    font-weight: bold;
+    color: #444;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    max-width: 80%;
+}
+
+.review-card .review-author {
+    font-weight: bold;
+    color: #808080;
+    font-size: 1.1rem;
+    border-top: 2px solid #f7d794;
+    padding-top: 10px;
+    width: fit-content;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.95);
+    border: 2px solid #f7d794;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    color: #1a1a2e;
+    z-index: 10;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider-btn:hover {
+    background: linear-gradient(135deg, #f7d794 0%, #e1b12c 100%);
+    color: #1a1a2e;
+    border-color: transparent;
+    transform: translateY(-50%) scale(1.1);
+}
+.prev-btn { 
+
+    left: 15px; 
+
+}
+.next-btn { 
+    right: 15px; 
+}
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+.dot {
+    width: 12px;
+    height: 12px;
+    background: #ddd;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.dot:hover { 
+    background: #b0b0b0; 
+}
+
+.dot.active { 
+    background: linear-gradient(135deg, #f7d794 0%, #e1b12c 100%);
+    transform: scale(1.3);
+}
+
+/* --- Стили для теста подбора курса --- */
+.quiz-container {
+  max-width: 800px;
+  margin: 60px auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  text-align: center;
+}
+.quiz-subtitle { color: #666; margin-bottom: 30px; font-size: 1.1rem; }
+.quiz-screen { display: none; }
+.quiz-screen.active { display: block; animation: fadeInQuiz 0.4s ease; }
+@keyframes fadeInQuiz { 
+  from { opacity: 0; transform: translateY(10px); } 
+  to { opacity: 1; transform: translateY(0); } 
+}
+.quiz-progress { 
+  width: 100%; background: #eee; height: 8px; 
+  border-radius: 4px; margin-bottom: 20px; overflow: hidden; 
+}
+.progress-bar { 
+  height: 100%; background: linear-gradient(135deg, #f7d794 0%, #e1b12c 100%); 
+  width: 0%; transition: width 0.3s ease; 
+}
+.question-counter { color: #888; font-size: 14px; margin-bottom: 10px; }
+.question-text { font-size: 1.3rem; margin-bottom: 25px; color: #2c3e50; }
+.options-grid { 
+  display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 25px; 
+}
+.option-btn {
+  padding: 15px;
+  background: #f8f9fa;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 15px;
+  color: #333;
+  text-align: left;
+}
+.option-btn:hover { border-color: #f7d794; background: #fffdf5; }
+.option-btn.selected { 
+  border-color: #e1b12c; 
+  background: linear-gradient(135deg, #f7d794 0%, #ffeaa7 100%); 
+  color: #1a1a2e; font-weight: bold; 
+}
+#next-btn { margin-top: 10px; opacity: 0.5; cursor: not-allowed; }
+#next-btn:not([disabled]) { opacity: 1; cursor: pointer; }
+.result-card {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2d3436 100%);
+  color: white;
+  padding: 30px;
+  border-radius: 12px;
+  margin-top: 20px;
+}
+.result-card h2 { margin: 0 0 10px; font-size: 2rem; color: #f7d794; }
+.result-card p { font-size: 1.1rem; line-height: 1.6; margin-bottom: 20px; }
+@media (max-width: 600px) { .options-grid { grid-template-columns: 1fr; } }
+
+.test-button {
+  margin-top: auto;
+  align-self: center; 
+  display: inline-block; 
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #f7d794 0%, #e1b12c 100%);
+  color: #1a1a2e;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(247, 215, 148, 0.3);
+  transition: all 0.3s ease;
 }

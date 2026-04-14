@@ -1,8 +1,23 @@
 // Модальное окно авторизации/регистрации
+
 let currentModalMode = 'login'; // 'login' или 'register'
 
+//перевод модального окна
+const langData = {
+    ru: { login: "Войти", 
+        log_in: "Вход",
+        reg: "Регистрация" },
+
+    en: { login: "Login", 
+        log_in: "Logining in",
+        reg: "Registration" },
+
+    lv: { login: "Ieiet", 
+        log_in: "Ieiet",
+        reg: "Reģistrācija" }
+};
 // Открыть модальное окно
-function openAuthModal(mode = 'login') {
+function openAuthModal(mode = 'login', lang = localStorage.getItem('selectedLanguage')) {
     const modal = document.getElementById('authModal');
     const loginForm = document.getElementById('loginForm');
     const registerForm = document.getElementById('registerForm');
@@ -22,11 +37,11 @@ function openAuthModal(mode = 'login') {
         if (mode === 'login') {
             loginForm.style.display = 'flex';
             registerForm.style.display = 'none';
-            document.getElementById('modalTitle').textContent = 'Вход';
+            document.getElementById('modalTitle').textContent = langData[lang]?.log_in;
         } else {
             loginForm.style.display = 'none';
             registerForm.style.display = 'flex';
-            document.getElementById('modalTitle').textContent = 'Регистрация';
+            document.getElementById('modalTitle').textContent = langData[lang]?.reg;
         }
     }
     
@@ -41,20 +56,20 @@ function closeAuthModal() {
 }
 
 // Переключиться на регистрацию
-function showRegister() {
+function showRegister(lang = localStorage.getItem('selectedLanguage')) {
     currentModalMode = 'register';
     document.getElementById('loginForm').style.display = 'none';
     document.getElementById('registerForm').style.display = 'flex';
-    document.getElementById('modalTitle').textContent = 'Регистрация';
+    document.getElementById('modalTitle').textContent = langData[lang]?.reg;
     hideMessages();
 }
 
 // Переключиться на вход
-function showLogin() {
+function showLogin(lang = localStorage.getItem('selectedLanguage')) {
     currentModalMode = 'login';
     document.getElementById('registerForm').style.display = 'none';
     document.getElementById('loginForm').style.display = 'flex';
-    document.getElementById('modalTitle').textContent = 'Вход';
+    document.getElementById('modalTitle').textContent = langData[lang]?.log_in;
     hideMessages();
 }
 
@@ -160,7 +175,7 @@ document.addEventListener('DOMContentLoaded', function() {
         button.addEventListener('click', function() {
             if (isLoggedIn()) {
                 const user = getCurrentUser();
-                alert(`Спасибо за интерес, ${user.name || user.email}! Мы свяжемся с вами.`);
+                alert(`Thank you for your interest ${user.name || user.email}! We'll contact with you.`);
             } else {
                 openAuthModal('register');
             }
@@ -172,7 +187,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Обновление шапки с кнопкой авторизации
-function updateHeaderAuth() {
+function updateHeaderAuth(lang = localStorage.getItem('selectedLanguage')) {
     const header = document.querySelector('header');
     let authButton = document.getElementById('headerAuthBtn');
     
@@ -181,13 +196,16 @@ function updateHeaderAuth() {
         authButton.id = 'headerAuthBtn';
         header.appendChild(authButton);
     }
-    
+
     const user = getCurrentUser();
     if (user) {
         authButton.textContent = user.name || user.email;
         authButton.onclick = () => openAuthModal('login');
     } else {
-        authButton.textContent = 'Войти';
+        // Используем перевод из langData с запасным вариантом
+        authButton.textContent = langData[lang]?.login;
         authButton.onclick = () => openAuthModal('login');
     }
 }
+
+

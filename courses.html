@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Курсы</title>
+    <title data-lang-key="courses">Курсы</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
@@ -125,7 +125,7 @@
             <form id="loginForm" class="auth-form" onsubmit="handleLogin(event)">
                 <input type="email" id="loginEmail" placeholder="Email" required>
                 <input type="password" id="loginPassword" placeholder="Пароль" required>
-                <button type="submit">Войти</button>
+                <button type="submit" data-lang-key="log_in">Войти</button>
                 <div id="errorMessage" class="error-message"></div>
                 <div id="successMessage" class="success-message"></div>
             </form>
@@ -136,7 +136,7 @@
                 <input type="email" id="registerEmail" placeholder="Email" required>
                 <input type="password" id="registerPassword" placeholder="Пароль (мин. 6 символов)" required>
                 <input type="password" id="registerConfirmPassword" placeholder="Подтвердите пароль" required>
-                <button type="submit">Зарегистрироваться</button>
+                <button type="submit" data-lang-key="reg">Зарегистрироваться</button>
                 <div id="errorMessage" class="error-message"></div>
                 <div id="successMessage" class="success-message"></div>
             </form>
@@ -151,8 +151,8 @@
             
             <!-- Переключатель между входом и регистрацией -->
             <div class="auth-toggle" id="authToggle">
-                <span id="toggleText">Нет аккаунта?</span>
-                <a id="toggleLink" onclick="showRegister()">Зарегистрироваться</a>
+                <span id="toggleText" data-lang-key="no_acc">Нет аккаунта?</span>
+                <a id="toggleLink" onclick="showRegister()" data-lang-key="reg">Зарегистрироваться</a>
             </div>
         </div>
     </div>
